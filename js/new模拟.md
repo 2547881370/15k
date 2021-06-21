@@ -22,7 +22,7 @@ function objectFactory(){
 
     // Constructor为传入的第一个参数,即是一个构造函数
     // 因为使用了slice,所以arguments也会被修改,将下标为0的参数移除
-    let Constructor = [].slice.call(arguments)
+    let Constructor = [].slice.call(arguments,1)
     // 所以,此时的arguments是剩余参数了
     // Constructor是传入要被实例化的函数
 
