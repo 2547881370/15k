@@ -143,6 +143,15 @@ Function.prototype.bind2 = function(content){
     // 使用Fnop函数做空转
     Fnop.prototype = this.prototype
 
+    /**
+    	// 原函数
+	function Person(name,age){
+		// 这里的this即是原型prototype
+		this.name = name
+		this.age = age
+	}
+	将原函数的prototype挂载到fBound的原型上,这样fBound就拥有了原函数的一些参数,然后在apply的时候,传入参数赋值
+    */
     fBound.prototype = new Fnop()
 
     // 这样如果直接修改返回函数的原型, 那么绑定函数的原型不会被修改
